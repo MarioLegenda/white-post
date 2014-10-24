@@ -1,0 +1,16 @@
+.WhitePostSlider {
+    width:100%;
+    float:left;
+    position:relative;
+
+    border:1px solid red;
+}
+
+.WhitePostSlider__Image {
+    width:100%;
+    position:absolute;
+    top:0; left:0;
+    z-index:1000;
+
+    opacity:0;
+}

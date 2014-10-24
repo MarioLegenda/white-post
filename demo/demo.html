@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>WhitePost Slider</title>
+
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link href="css/eric-meyer-reset.css" rel="stylesheet">
+    <link href="css/whitepost.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <script src="../vendor/jquery-1.11.1.min.js"></script>
+    <script src="../whitepost.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            $('.WhitePostSlider').WhitePost({
+                images: [
+                    'images/background-1.jpg',
+                    'images/background-2.jpg',
+                    'images/background-3.jpg',
+                    'images/background-4.jpg',
+                    'images/background-5.jpg'
+                ],
+                speed: 5000,
+                animation: 'fade',
+                cursors: true
+            });
+        })
+    </script>
+</head>
+
+<body>
+<div class="Global  Global--styling">
+    <header class="Header  Header--styling">
+        <nav class="Header__Navigation">
+            <ul>
+                <li><a href="" class="Header__Navigation--link">DemoNav 1</a></li>
+                <li><a href="" class="Header__Navigation--link">DemoNav 2</a></li>
+                <li><a href="" class="Header__Navigation--link">DemoNav 3</a></li>
+                <li><a href="" class="Header__Navigation--link">DemoNav 4</a></li>
+                <li><a href="" class="Header__Navigation--link">DemoNav 5</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="WhitePostSlider">
+        <div class="WhitePostSlider__Image">
+
+        </div>
+
+        <div class="WhitePostSlider__Image">
+
+        </div>
+
+        <div class="WhitePostSlider__Image">
+
+        </div>
+
+        <div class="WhitePostSlider__Image">
+
+        </div>
+        <div class="WhitePostSlider__Image">
+
+        </div>
+    </div>
+
+    <footer class="Footer  Footer--styling">
+        <p class="Footer__Text">Footer</p>
+    </footer>
+</div>
+</body>
+
+</html>
