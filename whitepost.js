@@ -36,52 +36,101 @@
             }
         };
 
+        var animator = {
+            clearRepeat: null,
+            animationSpeed: options.animationSpeed,
+
+            fade: function() {
+                this.clearRepeat = window.setInterval(function () {
+                    var image = $(images.get(counter.curr()));
+
+                    //console.log(images.get(counter.curr()));
+
+                    image.animate({
+                        opacity: 1
+                    }, 1000 ,function () {
+                        counter.next();
+                    }).clearQueue();
+
+                    var prev = counter.curr() - 1;
+
+                    if( typeof images.get(prev) !== 'undefined' ) {
+                        $(images.get(prev)).animate({
+                            opacity:0
+                        })
+                    }
+
+
+                }, options.duration);
+            },
+
+            slide: function() {
+                this.clearRepeat = window.setInterval(function () {
+                    var image = $(images.get(counter.curr())),
+                        next = $(images.get(counter.curr() + 1));
+
+                    if( typeof next.get(0) === 'undefined' ) {
+                        counter.next();
+                        next = $(images.get(counter.curr() + 1));
+                    }
+
+
+                    next.css({
+                        left: '-' + $(window).outerWidth() + 'px',
+                        opacity:1
+                    });
+
+                    image.animate({
+                        left: $(window).outerWidth() + 'px'
+                    }, 1000, function() {
+                        $(this).css({
+                            left: '0px',
+                            opacity: 0
+                        });
+
+                        counter.next();
+                    }).clearQueue();
+
+                    next.animate({
+                        left: '0px'
+                    }, 1000, function() {
+                    }).clearQueue();
+
+
+                }, options.duration);
+            },
+
+            clearAnimation: function() {
+                clearInterval(this.clearRepeat);
+            }
+        };
+
         sliderData.imagesDOM.each(function(index, value) {
             $(value).css({
-                backgroundImage : "url(" + options['images'][index] + ")",
-                backgroundAttachment: 'fixed',
-                backgroundSize: 'cover',
-                '-webkit-background-size': 'cover',
-                '-moz-background-size': 'cover',
-                '-o-background-size': 'cover'
+                backgroundImage : "url(" + options['images'][index] + ")"
             })
         });
 
         counter.start(sliderData.imagesDOM.length);
 
-        var tempTimeout = window.setTimeout(function() {}, 1000);
-        window.clearTimeout(tempTimeout);
-
         var images = sliderData.imagesDOM;
+        window.setTimeout(function() {
 
-       $(images[0]).animate({
-            opacity: 1
-        }, 500,function () {
-            counter.next();
-        }).clearQueue();
-
-        window.setInterval(function () {
-            var image = $(images.get(counter.curr()));
-
-            //console.log(images.get(counter.curr()));
-
-            image.animate({
+            $(images[0]).animate({
                 opacity: 1
-            }, 500,function () {
-                counter.next();
+            }, options.animationSpeed,function () {
+                if( options.animation === 'fade' ) {
+                    counter.next();
+                }
             }).clearQueue();
+        }, 1000);
 
-            var prev = counter.curr() - 1;
-
-            if( typeof images.get(prev) !== 'undefined' ) {
-                $(images.get(prev)).animate({
-                    opacity:0
-                })
-            }
-
-
-        }, options.speed);
-
+        if( options.animation === 'fade' ) {
+            animator.fade();
+        }
+        else if( options.animation === 'slide' ) {
+            animator.slide();
+        }
 
     }
 
@@ -94,7 +143,7 @@
         options = ( function(scope) {
             var defaultOptions =  {
                 images: null,
-                speed: 6000,
+                duration: 5000,
                 animation: 'fade',
                 cursors: true,
                 height: null,
@@ -120,6 +169,10 @@
                 }
             }
 
+            if( options['animation'] !== 'fade' && options['animation'] !== 'slide') {
+                throw new TypeError('\'animation\' property can only be \'fade\' or \'slide\'');
+            }
+
             var images = scope.find('.WhitePostSlider__Image');
 
             if( images.length === 0 ) {
@@ -142,14 +195,9 @@
                     topElem = scope.prev(),
                     bottomElem = scope.next();
 
-                var desiredHeight = viewportHeight - ( topElem.outerHeight() + bottomElem.outerHeight() );
+                var desiredHeight = viewportHeight - topElem.outerHeight();
                 scope.css('height', desiredHeight + 'px');
                 sliderData.sliderHeight = desiredHeight;
-
-                for( var i = 0; i < options['images'].length; i++ ) {
-                    var img = new Image();
-                    img.src = options['images'][i];
-                }
 
                 var images = sliderData.imagesDOM;
 
@@ -157,9 +205,33 @@
                     $(value).css('height', sliderData.sliderHeight + 'px');
                 });
 
+                for( var i = 0; i < options['images'].length; i++ ) {
+                    var img = new Image();
+                    img.src = options['images'][i];
+                }
+
             } (this) );
 
-            var slider = new WhitePost(sliderData, options);
+            $(window).resize(function() {
+                if( $(window).width() > 480 ) {
+                    var viewportHeight = $(window).outerHeight(),
+                        sliderElem = $('.WhitePostSlider'),
+                        topElem = sliderElem.prev(),
+                        bottomElem = sliderElem.next();
+
+                    var desiredHeight = viewportHeight - topElem.outerHeight();
+                    sliderElem.css('height', desiredHeight + 'px');
+                    sliderData.sliderHeight = desiredHeight;
+
+                    var images = sliderData.imagesDOM;
+
+                    images.each( function(index, value) {
+                        $(value).css('height', sliderData.sliderHeight + 'px');
+                    });
+                }
+            });
+
+            new WhitePost(sliderData, options);
 
         }
     }
