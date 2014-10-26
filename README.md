@@ -29,10 +29,9 @@ If you find some other downfalls or bugs, please tell me so I can fix it.
 
 ####Usage####
 
-First, add HTML. 
+First, add HTML...
 
 ```
-
     <div class="WhitePostSlider">
         <div class="WhitePostSlider__Image"></div>
         <div class="WhitePostSlider__Image"></div>
@@ -40,7 +39,26 @@ First, add HTML.
         <div class="WhitePostSlider__Image"></div>
         <div class="WhitePostSlider__Image"></div>
     </div>
+```
 
+Then jQuery...
+
+```
+        $(document).ready(function() {
+            $('.WhitePostSlider').WhitePost({
+                images: [
+                    'images/background-1.jpg',
+                    'images/background-2.jpg',
+                    'images/background-3.jpg',
+                    'images/background-4.jpg',
+                    'images/background-5.jpg'
+                ],
+                duration: 5000,
+                animation: 'fade',
+                cursors: true,
+                pauseOnHover: false
+            });
+        })
 ```
 
 
