@@ -23,7 +23,7 @@ Downfalls:
 
 > No cursors to navigate left or right. Also will be added sometime next week
 
-> Limited options and only one form of slider. For example, doesn't have a carousel option. Will be added in the futur.
+> Limited options and only one form of slider. For example, doesn't have a carousel option. Will be added in the future.
 
 If you find some other downfalls or bugs, please tell me so I can fix it.
 
