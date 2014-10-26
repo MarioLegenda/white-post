@@ -8,4 +8,4 @@ I'm most of my projects, whenever I needed a slider on the front page, I used [F
 
 This slider makes it easy to add more content in front of the slider. You just add inside `.WhitePostSlider` block and that's it. 
 
-###Usage###
+####Usage####
