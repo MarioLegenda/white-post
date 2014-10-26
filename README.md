@@ -13,13 +13,21 @@ Benefits:
 
 > Responsive
 
-> No messing with images. If you have an 1200 X 900 image and a 1200 X 950 image, both will automaticlly scale to the size of the slider's element
+> No messing with images. If you have an 1200 X 900 image and a 1200 X 950 image, both will automaticlly scale to the size of the slider's wrapping element
+
+> whitepost.css has around 20 lines of css and it wont be hard to modify it to suit your fancy
 
 
 Downfalls:
-> Needs to have a fixed height. Beacuse of that, it can only be used as a frontpage slider, spanning across the entire viewport height of the browser. That will be fixed in a few days or sometime next week by means of letting client code set the desired height via options.
+> Needs to have a fixed height. Beacuse of that, it can only be used as a frontpage slider, spanning across the entire viewport height of the browser. I will fix it in a few days or sometime next week by means of letting client code set the desired height via options.
 
-> 
+> No cursors to navigate left or right. Also will be added sometim next week
+
+> Limited options and only one form of slider. For example, doesn't have a carousel option. Will be added in the futur.
+
+####Usage####
+
+First
 
 
 
