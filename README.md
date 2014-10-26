@@ -39,7 +39,7 @@ First, add HTML...
         <div class="WhitePostSlider__Image"></div>
         <div class="WhitePostSlider__Image"></div>
     </div>
-```df
+```
 
 Then jQuery...
 
