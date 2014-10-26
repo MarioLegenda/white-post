@@ -61,7 +61,10 @@ $(document).ready(function() {
 ```
 
 So far, options can be
-* image: []
+* `images`: has to be an array of paths
+* `duration`
+* `animation`: `fade` or `slide`
+* `pauseOnHover`: `true` or `false`
 
 
 
