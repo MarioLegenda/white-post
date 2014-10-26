@@ -25,7 +25,7 @@ I'm most of my projects, whenever I needed a slider on the front page, I used [F
 
 > Limited options and only one form of slider. For example, doesn't have a carousel option. Will be added in the future.
 
-If you find some other downfalls or bugs, please tell me so I can fix it.
+If you find some other downfalls or bugs or some other benefits or you just don't like what I did, please tell me on `whitepostmail@gmail.com` ( I didn't create a new email account just for this slider, I just like the way WhitePost sounds. Also RedPost, BluePost etc... I'm a weird guy ).
 
 ####Usage####
 
