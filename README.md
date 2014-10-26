@@ -32,33 +32,38 @@ If you find some other downfalls or bugs, please tell me so I can fix it.
 First, add HTML...
 
 ```
-    <div class="WhitePostSlider">
-        <div class="WhitePostSlider__Image"></div>
-        <div class="WhitePostSlider__Image"></div>
-        <div class="WhitePostSlider__Image"></div>
-        <div class="WhitePostSlider__Image"></div>
-        <div class="WhitePostSlider__Image"></div>
-    </div>
+<div class="WhitePostSlider">
+    <div class="WhitePostSlider__Image"></div>
+    <div class="WhitePostSlider__Image"></div>
+    <div class="WhitePostSlider__Image"></div>
+    <div class="WhitePostSlider__Image"></div>
+    <div class="WhitePostSlider__Image"></div>
+</div>
 ```
 
 Then jQuery...
 
 ```
-        $(document).ready(function() {
-            $('.WhitePostSlider').WhitePost({
-                images: [
-                    'images/background-1.jpg',
-                    'images/background-2.jpg',
-                    'images/background-3.jpg',
-                    'images/background-4.jpg',
-                    'images/background-5.jpg'
-                ],
-                duration: 5000,
-                animation: 'fade',
-                cursors: true,
-                pauseOnHover: false
-            });
-        })
+$(document).ready(function() {
+    $('.WhitePostSlider').WhitePost({
+        images: [
+            'path/image1.jpg',
+            'path/image2.jpg',
+            'path/image3.jpg',
+            'path/image4.jpg',
+            'path/image5.jpg',
+        ],
+        duration: 5000,
+        animation: 'fade',
+        pauseOnHover: false
+    });
+})
 ```
+
+So far, options can be
+- images: []
+- 
+
+
 
 
