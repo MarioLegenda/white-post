@@ -8,9 +8,13 @@ I'm most of my projects, whenever I needed a slider on the front page, I used [F
 
 This slider makes it easy to add more content in front of the slider. You just add inside `.WhitePostSlider` block and that's it. 
 
-####Usage####
+Benefits:
+> Easy to add more content
+> Light
+> Responsive
 
-
-######*HTML*######
+Downfalls:
+> Needs to have a fixed height. Beacuse of that, it can only be used as a frontpage slider, spanning across the entire viewport height of the browser. That will be fixed in a few day or sometime next week by means of letting client code set the desired height via options.
+> 
 
 
