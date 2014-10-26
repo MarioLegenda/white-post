@@ -62,7 +62,7 @@ $(document).ready(function() {
 
 So far, options can be
 * `images`: has to be an array of paths
-* `duration`
+* `duration`: integer in miliseconds
 * `animation`: `fade` or `slide`
 * `pauseOnHover`: `true` or `false`
 
