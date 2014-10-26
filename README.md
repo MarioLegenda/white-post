@@ -10,8 +10,11 @@ This slider makes it easy to add more content in front of the slider. You just a
 
 Benefits:
 > Easy to add more content
+
 > Light
+
 > Responsive
+
 
 Downfalls:
 > Needs to have a fixed height. Beacuse of that, it can only be used as a frontpage slider, spanning across the entire viewport height of the browser. That will be fixed in a few day or sometime next week by means of letting client code set the desired height via options.
