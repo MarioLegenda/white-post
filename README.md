@@ -10,6 +10,7 @@ This slider makes it easy to add more content in front of the slider. You just a
 
 ####Usage####
 
-######HTML######
+
+######*HTML*######
 
 
