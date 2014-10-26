@@ -61,8 +61,7 @@ $(document).ready(function() {
 ```
 
 So far, options can be
-- images: []
-- 
+* image: []
 
 
 
