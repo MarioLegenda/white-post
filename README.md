@@ -21,7 +21,7 @@ Benefits:
 Downfalls:
 > Needs to have a fixed height. Beacuse of that, it can only be used as a frontpage slider, spanning across the entire viewport height of the browser. I will fix it in a few days or sometime next week by means of letting client code set the desired height via options.
 
-> No cursors to navigate left or right. Also will be added sometim next week
+> No cursors to navigate left or right. Also will be added sometime next week
 
 > Limited options and only one form of slider. For example, doesn't have a carousel option. Will be added in the futur.
 
