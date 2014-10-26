@@ -25,9 +25,22 @@ Downfalls:
 
 > Limited options and only one form of slider. For example, doesn't have a carousel option. Will be added in the futur.
 
+If you find some other downfalls or bugs, please tell me so I can fix it.
+
 ####Usage####
 
-First
+First, add HTML. 
 
+```
+
+    <div class="WhitePostSlider">
+        <div class="WhitePostSlider__Image"></div>
+        <div class="WhitePostSlider__Image"></div>
+        <div class="WhitePostSlider__Image"></div>
+        <div class="WhitePostSlider__Image"></div>
+        <div class="WhitePostSlider__Image"></div>
+    </div>
+
+```
 
 
